@@ -47,7 +47,7 @@ router.get('/api/books', function (req, res) { return __awaiter(void 0, void 0, 
     var books;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, book_1.Book.find()];
+            case 0: return [4 /*yield*/, book_1.BookModel.find()];
             case 1:
                 books = _a.sent();
                 res.status(200).send(books);
@@ -61,10 +61,10 @@ router.post('/api/books', urlencodedParser, function (req, res) { return __await
         switch (_b.label) {
             case 0:
                 _a = req.body, title = _a.title, description = _a.description, author = _a.author;
-                if (!(title && description && author)) {
+                if (title === undefined || description === undefined || author === undefined) {
                     return [2 /*return*/, res.status(400).send('Invalid Request')];
                 }
-                book = book_1.Book.build({ title: title, description: description, author: author });
+                book = book_1.BookModel.build({ title: title, description: description, author: author });
                 return [4 /*yield*/, book.save()];
             case 1:
                 _b.sent();
@@ -80,11 +80,10 @@ router.put('/api/books/:id', urlencodedParser, function (req, res) { return __aw
             case 0:
                 id = req.params.id;
                 _a = req.body, title = _a.title, description = _a.description, author = _a.author;
-                console.log(id, title, description, author);
                 if (!(id && title && description && author)) {
                     return [2 /*return*/, res.status(400).send()];
                 }
-                return [4 /*yield*/, book_1.Book.findByIdAndUpdate(id, { title: title, description: description, author: author }, { "new": true })];
+                return [4 /*yield*/, book_1.BookModel.findByIdAndUpdate(id, { title: title, description: description, author: author }, { "new": true })];
             case 1:
                 book = _b.sent();
                 res.status(200).send(book);
@@ -96,7 +95,7 @@ router["delete"]('/api/books/:id', function (req, res) { return __awaiter(void 0
     var book;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, book_1.Book.findByIdAndRemove(req.params.id)];
+            case 0: return [4 /*yield*/, book_1.BookModel.findByIdAndRemove(req.params.id)];
             case 1:
                 book = _a.sent();
                 if (!book) {
