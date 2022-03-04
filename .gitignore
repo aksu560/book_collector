@@ -3,6 +3,7 @@ node_modules
 /dist
 
 server/*.js
+server/*/*.js
 models/*.js
 
 # local env files
