@@ -1,29 +1,10 @@
 # book_collector
 
-## Project setup
-```
-npm install
-```
+Project created as an exercise for a Job interview.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Installation:  
+* Make sure you have [MongoDB](https://www.mongodb.com/) installed, with default configuration
+* Clone this repo
+* Install npm packages with `npm i`
+* Spin up the project with `npm run start`
+* The project should now be running on http://localhost:8080
