@@ -1,7 +1,7 @@
 # book_collector
 
 Project created as an exercise for a Job interview.  
-Written with typescript for Vue 3, Express and MongoDB
+Written with typescript for Vue 3, Express, Bulma and MongoDB
 
 Installation:  
 * Make sure you have [MongoDB](https://www.mongodb.com/) installed, with default configuration
